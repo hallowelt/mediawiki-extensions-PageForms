@@ -21,7 +21,7 @@ class PFUploadWindow extends UnlistedSpecialPage {
 	 */
 	public function __construct( $request = null ) {
 		parent::__construct( 'UploadWindow', 'upload' );
-		$this->loadRequest( is_null( $request ) ? $this->getRequest() : $request );
+		$this->loadRequest( $request instanceof WebRequest ? $request : $this->getRequest() );
 	}
 
 	/** Misc variables **/
